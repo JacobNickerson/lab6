@@ -40,12 +40,12 @@ def main():
 		print_menu()
 		while True:
 			try:
-				user_input = int(input("Please enter an option: "))
+				user_input = input("Please enter an option: ").strip()
 				break
 			except ValueError:
 				print("Error: Invalid selection")
 		match user_input:
-			case 1:
+			case "1":
 				while True:
 					try:
 						raw_password = input("Please enter your password to encode: ")
@@ -55,12 +55,12 @@ def main():
 						break
 					except ValueError:
 						print("Error: Password contained invalid characters")
-			case 2:
+			case "2":
 				if encoded_password == "":
 					print("Error: No password stored!")
 				else:
 					print(f"The encoded password is {encoded_password}, and the original password is {decode(encoded_password)}.")  # TODO: Implement decode function
-			case 3:
+			case "3":
 				return 0
 			case _:
 				print("Error: Invalid selection")
