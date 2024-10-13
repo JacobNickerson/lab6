@@ -22,6 +22,9 @@ def encode(password: str) -> str:
 		encoded_password += chr(digit + ord('0'))
 	return encoded_password
 
+def decode():  #TODO: Implement decoding function
+    ...
+
 
 def print_menu():
 	"""
