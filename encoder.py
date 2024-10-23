@@ -12,7 +12,7 @@ def encode(password: str) -> str:
 			The password after being encoded
 
 	Example:
-	>>> encode("123456789")
+	>> encode("123456789")
 	"456789012"
 	"""
 	encoded_password = ""
@@ -22,8 +22,13 @@ def encode(password: str) -> str:
 		encoded_password += chr(digit + ord('0'))
 	return encoded_password
 
-def decode():  #TODO: Implement decoding function
-    ...
+def decode(encoded_password):
+	old_password = ""
+	for digit in encoded_password:
+		old_digit = (int(digit) - 3) % 10
+		old_password += str(old_digit)
+	return old_password
+
 
 
 def print_menu():
